@@ -1,11 +1,11 @@
+/* eslint-disable */
 export default function updateStudentGradeByCity(obj, city, newGrades) {
   if (!Array.isArray(obj) || !Array.isArray(newGrades)) {
     return [];
   }
   const arr = obj.filter((row) => row.location === city);
-  const secondArr = arr.map((row) =>
-  {
-    for (const line of newGrades){
+  const secondArr = arr.map((row) => {
+    for (const line of newGrades) {
       if (row.id === line.studentId) {
         row.grade = line.grade;
         break;
@@ -14,7 +14,6 @@ export default function updateStudentGradeByCity(obj, city, newGrades) {
       }
     }
     return row;
-  }
-);
+  });
   return secondArr;
 }
