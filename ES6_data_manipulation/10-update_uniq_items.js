@@ -1,5 +1,5 @@
 export default function updateUniqueItems(updateMap) {
-  if (!Object.getPrototypeOf(updateMap) === Map.prototype) {
+   if (!(map instanceof Map)) {
     throw new Error('Cannot process')
   }
   for (const i of updateMap){
