@@ -1,5 +1,6 @@
 export default function cleanSet(set, startString) {
-  let str = '';
+  let str;
+  str = '';
   const arr = Array.from(set);
   if (startString !== '') {
     for (const i of set) {
