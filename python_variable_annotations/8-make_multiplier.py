@@ -9,6 +9,6 @@ def make_multiplier(multiplier: float) -> typing.Callable[[float], float]:
     """
     The function returns callable value
     """
-    def call(new_multipler: float) -> float:
+    def call(new_multiplier: float) -> float:
         return new_multiplier * multiplier
     return call
