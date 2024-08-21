@@ -6,6 +6,7 @@ import asyncio
 import random
 import typing
 
+
 async def async_generator() -> typing.Generator[float, None, None]:
     """
     Functions yields the list of float numbers
