@@ -15,7 +15,5 @@ async def async_comprehension() -> typing.List[float]:
     Funtcion returns the list of floar number which
     numbers are yielded by prev functoin
     """
-    arr = []
-    async for i in async_generator():
-        arr.append(i)
+    arr = [i async for i in async_generator()]
     return arr
