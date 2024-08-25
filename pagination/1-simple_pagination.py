@@ -42,6 +42,6 @@ class Server:
         assert isinstance(page_size, int) and page_size > 0
         pagination_range = index_range(page, page_size)
         data = self.dataset()
-        if pagination_range[0] > len(data):
+        if pagination_range[0] >= len(data):
             return []
         return data[pagination_range[0]:pagination_range[1]]
