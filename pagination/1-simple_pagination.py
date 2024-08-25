@@ -36,7 +36,7 @@ class Server:
             self.__dataset = dataset[1:]
         return self.__dataset
 
-    def get_page(self, page: int = 1, page_size: int = 10):
+    def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         assert isinstance(page, int) and page > 0, \
             f"page must be an integer greater than 0, got {page}"
         assert isinstance(page_size, int) and page_size > 0, \
