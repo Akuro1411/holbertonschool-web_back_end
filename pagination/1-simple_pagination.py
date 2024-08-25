@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
-No module is imported
+All required modules are imported
 """
 import csv
 import math
 from typing import List
+
+
 def index_range(page: int, page_size: int) -> tuple:
     """
     :param page:
