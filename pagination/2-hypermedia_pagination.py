@@ -49,12 +49,14 @@ class Server:
             return []
         return data[pagination_range[0]:pagination_range[1]]
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) ->  Dict[str, Any]:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """
         :param page:
         :param page_size:
         :return: The function returns the dictionary of data
         """
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
         data = self.get_page(page, page_size)
         full_data = self.dataset()
         start_index, last_index = index_range(page, page_size)
