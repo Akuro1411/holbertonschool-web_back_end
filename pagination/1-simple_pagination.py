@@ -5,6 +5,8 @@ All required modules are imported
 import csv
 import math
 from typing import List
+
+
 def index_range(page: int, page_size: int) -> tuple:
     """
     :param page:
@@ -14,12 +16,16 @@ def index_range(page: int, page_size: int) -> tuple:
     start_index = (page - 1) * page_size
     end_index = start_index + page_size
     return start_index, end_index
+
+
 class Server:
     """Server class to paginate a database of popular baby names.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
+
     def __init__(self):
         self.__dataset = None
+
     def dataset(self) -> List[List]:
         """Cached dataset
         """
@@ -29,6 +35,7 @@ class Server:
                 dataset = [row for row in reader]
             self.__dataset = dataset[1:]
         return self.__dataset
+
     def get_page(self, page: int = 1, page_size: int = 10):
         assert isinstance(page, int) and page > 0, \
             f"page must be an integer greater than 0, got {page}"
