@@ -49,7 +49,7 @@ class Server:
             return []
         return data[pagination_range[0]:pagination_range[1]]
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
+    def get_hyper(self, page: int = 1, page_size: int = 10) ->  Dict[str, Any]:
         """
         :param page:
         :param page_size:
