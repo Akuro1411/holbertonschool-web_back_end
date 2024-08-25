@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """
-All required modules are imported
+All the needed modules are imported
 """
 import csv
-import math
-from typing import List, Tuple
+from typing import List
 
 
-def index_range(page: int, page_size: int) -> Tuple[int, int]:
+def index_range(page: int, page_size: int) -> tuple:
     """
     :param page:
     :param page_size:
@@ -34,18 +33,17 @@ class Server:
                 reader = csv.reader(f)
                 dataset = [row for row in reader]
             self.__dataset = dataset[1:]
+
         return self.__dataset
-    def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """Return the appropriate page of the dataset."""
-        assert isinstance(page, int) and page > 0, \
-            f"page must be an integer greater than 0, got {page}"
-        assert isinstance(page_size, int) and page_size > 0, \
-            f"page_size must be an integer greater than 0, got {page_size}"
 
-        start_index, end_index = index_range(page, page_size)
-        dataset = self.dataset()
-
-        if start_index >= len(dataset):
+    def get_page(self, page: int = 1, page_size: int = 10):
+        """
+        Returns the data for range
+        """
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
+        pagination_range = index_range(page, page_size)
+        data = self.dataset()
+        if pagination_range[0] > len(data):
             return []
-
-        return dataset[start_index:end_index]
+        return data[pagination_range[0]:pagination_range[1]]
