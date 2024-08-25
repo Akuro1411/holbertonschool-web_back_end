@@ -4,10 +4,10 @@ All required modules are imported
 """
 import csv
 import math
-from typing import List
+from typing import List, Tuple
 
 
-def index_range(page: int, page_size: int) -> tuple:
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
     :param page:
     :param page_size:
